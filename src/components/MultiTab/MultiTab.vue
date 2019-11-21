@@ -106,7 +106,7 @@ export default {
 
       return (
         <a-dropdown overlay={menu} trigger={['contextmenu']}>
-          <span style={{ userSelect: 'none' }}>{ title }</span>
+          <span style={{ userSelect: 'none', fontWeight: keyPath === this.activeKey ? 'bolder' : 'normal' }}>{ title }</span>
         </a-dropdown>
       )
     }
@@ -128,7 +128,7 @@ export default {
     const panes = pages.map(page => {
       return (
         <a-tab-pane
-          style={{ height: 0, fontWeight: 'bolder' }}
+          style={{ height: 0 }}
           tab={this.renderTabPane(page.meta.title, page.fullPath)}
           key={page.fullPath} closable={pages.length > 1}
         >
