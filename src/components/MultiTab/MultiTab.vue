@@ -128,7 +128,7 @@ export default {
     const panes = pages.map(page => {
       return (
         <a-tab-pane
-          style={{ height: 0 }}
+          style={{ height: 0, fontWeight: 'bolder' }}
           tab={this.renderTabPane(page.meta.title, page.fullPath)}
           key={page.fullPath} closable={pages.length > 1}
         >
