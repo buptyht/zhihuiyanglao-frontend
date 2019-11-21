@@ -3,7 +3,7 @@
     <div style="float: left">
       <slot name="extra">{{ extra }}</slot>
     </div>
-    <div style="float: right">
+    <div>
       <slot></slot>
     </div>
   </div>

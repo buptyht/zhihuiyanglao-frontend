@@ -50,6 +50,10 @@
       <!-- layout footer -->
       <a-layout-footer>
         <global-footer />
+        <footer-tool-bar :style="{'line-height':'30px','height':'30px','text-align':'center','float':'left', width: isSideMenu() && isDesktop() ? `calc(100% - ${sidebarOpened ? 256 : 80}px)` : '100%'}">
+          Copyright
+          <a-icon type="copyright" /> 2019 <span>RuoYi Ant</span>
+        </footer-tool-bar>
       </a-layout-footer>
 
       <!-- Setting Drawer (show in development mode) -->
@@ -68,7 +72,8 @@ import config from '@/config/defaultSettings'
 import RouteView from './RouteView'
 import SideMenu from '@/components/Menu/SideMenu'
 import GlobalHeader from '@/components/GlobalHeader'
-import GlobalFooter from '@/components/GlobalFooter'
+// import GlobalFooter from '@/components/GlobalFooter'
+import FooterToolBar from '@/components/FooterToolbar'
 import SettingDrawer from '@/components/SettingDrawer'
 import { updateTheme } from '@/components/SettingDrawer/settingConfig'
 
@@ -79,7 +84,8 @@ export default {
     RouteView,
     SideMenu,
     GlobalHeader,
-    GlobalFooter,
+    // GlobalFooter,
+    FooterToolBar,
     SettingDrawer
   },
   data () {

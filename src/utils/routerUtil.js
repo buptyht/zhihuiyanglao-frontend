@@ -110,7 +110,6 @@ export const generatorDynamicRouter = () => {
  * @returns {*}
  */
 export const generator = (routerMap, parent) => {
-  console.log(routerMap)
   return routerMap.map(item => {
     const currentRouter = {
       // 路由地址 动态拼接生成如 /dashboard/workplace
@@ -175,7 +174,7 @@ export function buildmenu (rows) {
         {
           'title': '表单页',
           'key': 'form',
-          'component': 'PageView',
+          'component': 'RouteView',
           'icon': 'form',
           'children': [{
             'title': '基础表单',
@@ -197,7 +196,7 @@ export function buildmenu (rows) {
         {
           'title': '列表页',
           'key': 'list',
-          'component': 'PageView',
+          'component': 'RouteView',
           'icon': 'table',
           'children': [{
             'title': '查询表格',
@@ -255,7 +254,7 @@ export function buildmenu (rows) {
         {
           'title': '结果页',
           'key': 'result',
-          'component': 'PageView',
+          'component': 'RouteView',
           'icon': 'check-circle-o',
           'children': [{
             'hiddenHeaderContent': true,
@@ -274,7 +273,7 @@ export function buildmenu (rows) {
         {
           'title': '异常页',
           'key': 'exception',
-          'component': 'PageView',
+          'component': 'RouteView',
           'icon': 'warning',
           'children': [
             {
@@ -297,7 +296,7 @@ export function buildmenu (rows) {
         {
           'title': '个人页',
           'key': 'account',
-          'component': 'PageView',
+          'component': 'RouteView',
           'icon': 'user',
           'children': [
             {
