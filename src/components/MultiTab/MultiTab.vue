@@ -106,7 +106,7 @@ export default {
 
       return (
         <a-dropdown overlay={menu} trigger={['contextmenu']}>
-          <span style={{ userSelect: 'none', fontWeight: keyPath === this.activeKey ? 'bolder' : 'normal' }}>{ title }</span>
+          <span style={{ userSelect: 'none', color: keyPath === this.activeKey ? '#fff' : '#000', fontWeight: keyPath === this.activeKey ? 'bolder' : 'normal' }}>{ title }</span>
         </a-dropdown>
       )
     }
@@ -142,7 +142,7 @@ export default {
             hideAdd
             type={'editable-card'}
             v-model={this.activeKey}
-            tabBarStyle={{ background: '#FFF', margin: 0, paddingLeft: '16px', paddingTop: '1px' }}
+            tabBarStyle={{ background: '#FFF', margin: 0, paddingLeft: '16px', paddingTop: '1px', height: '25px' }}
             {...{ on: { edit: onEdit } }}>
             {panes}
           </a-tabs>
@@ -152,3 +152,13 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+/deep/.ant-tabs.ant-tabs-card .ant-tabs-card-bar{
+  .ant-tabs-tab-active{
+    background: #42b983;
+  }
+}
+/deep/.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+   line-height: 21px;
+}
+</style>
