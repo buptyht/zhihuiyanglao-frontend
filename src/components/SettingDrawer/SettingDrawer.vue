@@ -122,7 +122,7 @@
                 </a-list-item-meta>
               </a-list-item>
               <a-list-item>
-                <a-switch slot="actions" size="small" :disabled="(layoutMode === 'topmenu')"  :defaultChecked="multiMenu" @change="handleMultiMenu" />
+                <a-switch slot="actions" size="small" :disabled="(layoutMode === 'topmenu')" :defaultChecked="multiMenu" @change="handleMultiMenu" />
                 <a-list-item-meta>
                   <a-tooltip slot="title" placement="left">
                     <template slot="title">该设定仅 [侧边栏导航] 时有效</template>
