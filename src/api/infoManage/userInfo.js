@@ -14,7 +14,7 @@ export function getUserInfoList (parameter) {
 
 export function saveUserInfo (parameter) {
   return axios({
-    url: api.userInfo + (parameter.id > 0 ? '/update' : '/save'),
+    url: api.userInfo + (parameter.id >= 0 ? '/update' : '/save'),
     method: 'post',
     data: parameter,
     headers: {
