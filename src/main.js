@@ -10,6 +10,7 @@ import i18n from './locales'
 import { VueAxios } from './utils/request'
 import ProLayout, { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
 import themePluginConfig from '../config/themePluginConfig'
+import BaiduMap from 'vue-baidu-map'
 
 // mock
 import './mock'
@@ -25,6 +26,10 @@ Vue.config.productionTip = false
 
 // mount axios Vue.$http and this.$http
 Vue.use(VueAxios)
+Vue.use(BaiduMap, {
+  /* Visit http://lbsyun.baidu.com/apiconsole/key for details about app key. */
+  ak: 'LX3z4oMa3prd1QbIhQhRdrakQXBm7fuu'
+})
 Vue.component('pro-layout', ProLayout)
 Vue.component('page-container', PageHeaderWrapper)
 Vue.component('page-header-wrapper', PageHeaderWrapper)
