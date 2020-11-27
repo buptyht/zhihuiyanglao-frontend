@@ -29,12 +29,6 @@
       <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="所在详细地址">
         <a-input placeholder="所在详细地址" v-decorator="['address']" />
       </a-form-item>
-      <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="所在经度">
-        <a-input placeholder="所在经度" v-decorator="['longitude']" />
-      </a-form-item>
-      <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="所在纬度">
-        <a-input placeholder="所在纬度" v-decorator="['latitude']" />
-      </a-form-item>
       <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="本人联系电话或组织负责人电话">
         <a-input placeholder="本人联系电话或组织负责人电话" v-decorator="['phoneNumber']" />
       </a-form-item>
@@ -50,13 +44,16 @@
       <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="更新者">
         <a-input placeholder="更新者" v-decorator="['updatedBy']" />
       </a-form-item>
+      <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="地图定位"
+        ><baidu-map class="map" :center="center" :zoom="zoom" @ready="handler"></baidu-map>
+      </a-form-item>
     </a-form>
   </a-modal>
 </template>
 <script>
 export default {
   name: 'MyModal',
-  props: {},
+  props: ['center', 'zoom'],
   components: {},
   data() {
     return {
@@ -84,13 +81,27 @@ export default {
         if (!err) {
           console.log('Received values of form: ', values)
           this.confirmLoading = true
-          this.$emit('ok', values)
+          var location = this.marker.getPosition()
+          this.$emit('ok', { values, location })
           this.confirmLoading = false
-                this.visible = false
-
+          this.visible = false
         }
       })
+    },
+    handler({ BMap, map }) {
+      this.BMap = BMap
+      this.map = map
+      this.marker = new BMap.Marker(this.map.getCenter(), {
+        enableDragging: true,
+      })
+      map.addOverlay(this.marker)
     },
   },
 }
 </script>
+<style scoped>
+.map {
+  width: 100%;
+  height: 400px;
+}
+</style>

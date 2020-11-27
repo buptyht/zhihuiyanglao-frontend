@@ -23,7 +23,7 @@
 </a-descriptions-item>
       </a-descriptions>
       <a-button type="primary" class="editbtn" @click="$refs.mymodal.setVisibleTrue()">编辑用户信息</a-button>
-      <my-modal ref="mymodal" @ok="setNewValue"></my-modal>
+      <my-modal ref="mymodal" @ok="setNewValue" :center="center" :zoom="zoom"></my-modal>
     </div>
   </a-card>
 </template>
@@ -53,21 +53,23 @@ export default {
         updatedBy: 'yht',
         userName: '马保国',
       },
-      center: { lng: 0, lat: 0 },
-      zoom: 3,
+      center: { lng: 116.404, lat: 39.915 },
+      zoom: 15,
     }
   },
   methods: {
-    setNewValue(values) {
-      this.values = values
+    setNewValue(valsandloc) {
+      this.values = valsandloc.values
+      this.center = valsandloc.location
+      this.marker.setPosition(this.center)
       console.log(this.values)
+      console.log(this.center);
     },
     handler({ BMap, map }) {
-      this.center.lng = 116.404
-      this.center.lat = 39.915
-      this.zoom = 15
       this.BMap = BMap
       this.map = map
+      this.marker = new BMap.Marker(this.map.getCenter())
+      map.addOverlay(this.marker)
     }
   },
 }
