@@ -55,8 +55,38 @@ module.exports = {
         'ignoreReadBeforeAssign': false
       }
     ],
+    // 以下部分为解除eslint限制的代码，如不需要可删除
     'template-curly-spacing': 'off',
-    'indent': ['error']
+    'indent': ['error'],
+    // allow async-await
+    'generator-star-spacing': 'off',
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-trailing-spaces': 'off',
+    'indent': 'off',
+    'spaced-comment': 'off',
+    'no-trailing-spaces': 'off',
+    'no-new': 'off',
+    'key-spacing': 'off',
+    'comma-dangle': 'off',
+    'eol-last': 'off',
+    'quotes': 'off',
+    'semi': 'off',
+    'keyword-spacing': 'off',
+    'space-before-blocks': 'off',
+    'comma-spacing': 'off',
+    'space-before-function-paren': 'off',
+    'space-infix-ops': 'off',
+    'no-multiple-empty-lines': 'off',
+    'block-spacing': 'off',
+    'padded-blocks': 'off',
+    'arrow-spacing': 'off',
+    'no-sequences': 'off',
+    'no-unused-expressions': 'off',
+    'no-multi-spaces': 'off',
+    'no-unused-vars': 'off',
+    'camelcase ': 'off',
+    // 解除eslint限制的代码删除到这里为止
   },
   parserOptions: {
     parser: 'babel-eslint'
