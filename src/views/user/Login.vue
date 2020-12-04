@@ -297,6 +297,7 @@ export default {
       })
     },
     loginSuccess (res) {
+      console.log(res)
       if (res.code === 0) {
         this.$router.push({ name: 'dashboard' }, () => {
           this.$notification.success({
