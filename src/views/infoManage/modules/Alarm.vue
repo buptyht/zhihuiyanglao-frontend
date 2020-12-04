@@ -91,7 +91,7 @@ export default {
 }
 
 #alarm-div {
-  padding: 300px 20% 0px;
+  padding: 50% 10% 0px;
 }
 </style>
 
