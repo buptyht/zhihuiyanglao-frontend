@@ -1,6 +1,8 @@
 <template>
   <a-card title="用户信息" :bordered="false">
-    <div id="left"><img src="./timg.jpg" /></div>
+    <div id="left"><img src="./timg.jpg" />
+    <alarm></alarm>
+    </div>
     <div id="right">
       <a-descriptions bordered>
         <a-descriptions-item label="本人身份证号">{{ values.identityId }}</a-descriptions-item>
@@ -30,10 +32,13 @@
 
 <script>
 import MyModal from './modules/MyModal'
+import Alarm from './modules/Alarm.vue'
+
 export default {
   name: 'UserInfo',
   components: {
     MyModal,
+    Alarm
   },
   data() {
     return {
@@ -75,7 +80,7 @@ export default {
 }
 </script>
 <style scoped>
-#left {
+#left{
   width: 10%;
   float: left;
 }
@@ -97,4 +102,5 @@ img {
 .editbtn {
   margin-top: 10px;
 }
+
 </style>

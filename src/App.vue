@@ -9,9 +9,12 @@
 <script>
 import { domTitle, setDocumentTitle } from '@/utils/domUtil'
 import { i18nRender } from '@/locales'
+import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN';
+
 export default {
   data () {
     return {
+        locale: zhCN,
     }
   },
   computed: {
