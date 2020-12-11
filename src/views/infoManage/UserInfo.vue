@@ -11,6 +11,7 @@
       >
         <a-button> <a-icon type="upload" /> Click to Upload </a-button>
       </a-upload>
+      <alarm></alarm>
     </div>
     <div id="right">
       <a-descriptions bordered>
@@ -41,10 +42,13 @@
 <script>
 import { axios } from '@/utils/request'
 import MyModal from './modules/MyModal'
+import Alarm from './modules/Alarm.vue'
+
 export default {
   name: 'UserInfo',
   components: {
     MyModal,
+    Alarm
   },
   data() {
     return {
@@ -108,7 +112,7 @@ export default {
 }
 </script>
 <style scoped>
-#left {
+#left{
   width: 10%;
   float: left;
 }
@@ -131,4 +135,5 @@ img {
 .editbtn {
   margin-top: 10px;
 }
+
 </style>
