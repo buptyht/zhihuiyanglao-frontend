@@ -4,7 +4,7 @@ const api = {
   ForgePassword: '/auth/forge-password',
   Register: '/auth/register',
   twoStepCode: '/auth/2step-code',
-  SendSms: '/account/sms',
+  SendSms: '/system/user/register/sendEmailCode',
   SendSmsErr: '/account/sms_err',
   // get my info
   UserInfo: '/user/info',

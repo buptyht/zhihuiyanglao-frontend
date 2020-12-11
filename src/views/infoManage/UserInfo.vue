@@ -32,6 +32,7 @@
         <a-descriptions-item label="更新者" :span="3"> {{ values.updatedBy }}</a-descriptions-item>
       </a-descriptions>
       <a-button type="primary" class="editbtn" @click="onClick">编辑用户信息</a-button>
+      <a-button type="primary" @click="$router.push('userInfoManage')">跳转到用户信息列表</a-button>
       <my-modal ref="mymodal" @ok="setNewValue"></my-modal>
     </div>
   </a-card>
